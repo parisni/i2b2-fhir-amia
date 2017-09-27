@@ -51,14 +51,14 @@
 \author{Nicolas Paris, phD Strudent$^{1}$,$^{2}$, Firstname B. Lastname, Degrees$^{2}$}
 
 \institutes{
-    $^1$WIND-DSI, AP-HP, Paris, France; $^2$CNRS, LIMSIxxx, Orsay, France; $^3$INSERM, UMR\_S 1142, LIMICS, Paris, France;\\
+    $^1$WIND-DSI, AP-HP, Paris, France; $^2$CNRS, LIMSI, Orsay, France; $^3$INSERM, UMR\_S 1142, LIMICS, Paris, France;\\
     }
 
 \maketitle
 
 \noindent{\bf Abstract}
 
-\textit{Integrating Biology and the Bedside (i2b2) is the de-facto open-source medical tool for cohort discovery. Fast Healthcare Interoperability Resources (FHIR) is a new standard for exchanging health care information electronically. Substitutable Modular third-party Applications (SMART) defines the SMART-on-FHIR specification on how application shall interface with EHR thought FHIR. In this paper, we extended i2b2 for being plugged on top of one or multiple SMART-on-FHIR API. This enable federation queries, security, terminology mapping, and also bridges the gap between i2b2 and modern big-data technologies.}
+\textit{Integrating Biology and the Bedside (i2b2) is the de-facto open-source medical tool for cohort discovery. Fast Healthcare Interoperability Resources (FHIR) is a new standard for exchanging health care information electronically. Substitutable Modular third-party Applications (SMART) defines the SMART-on-FHIR specification on how applications shall interface with EHR thought FHIR. Related work made possible to produce FHIR from an i2b2 instance or i2b2 to store FHIR datasets. In this paper, we extend i2b2 to search remotely into one or multiple SMART-on-FHIR API. This enables federation of queries, security, terminology mapping, and also bridges the gap between i2b2 and modern big-data technologies.}
 %[h150  words]Programmatic themes: Translational
 %Keywords: Cohort Discovery, Data integration and standardization, Informatics implementation
 
@@ -86,61 +86,57 @@ SMART Health IT is an open, standards based technology platform that enables inn
 
 i2b2 is the de-facto open-source medical tool for cohort discovery and allows  healthcare practitioners to easily query patient data to address research questions. Many initiatives have extended this primary goal with statistical analysis on place[ref], federating queries over multiple centers [shrine, insite, triknetX], and even genomics analytics.[transmart, i2b2-transmart]. Its recent migration on github allows multiple developers to improve and extend the source code. I2b2 has been described to be used by more than 200 hospitals over the world. The tool is flexible and can support its own stars schema and ontology model, or exploit new information models � e.g. PCORnet  or OMOP common data model - without requiring changes to the underlying data .ETL processes feeding the databases are time, resource, maintenance and disk space consuming processes. The database layer can be PostgreSQL, Oracle or Microsoft SQL Server. Though ETL processes are still feasible these days, the emergence of high throughput healthcare data data and the Internet of Things requires the development of new approaches.
 
-This work describes a general interface between i2b2 and any type of EHRexploiting the FHIR search[ref], Terminology Mapping[ref] and SMART Oauth2 security[ref] specifications. The aim was not only to bridge the gap between patient care and research communities, but also toopen to i2b2 new areas for  better data type , security and interoperability management in the context of scalable solutions for cross border and cross domain networking of data.
+The objectives of this work is to bring the latest accomplishments of the FHIR community to i2b2. In particular, bring the flexibility, the extensibility, the standardisation, and the interoperability efforts to i2b2.
+This work describes a general interface between i2b2 and any type of clinical dataset by exploiting the FHIR search[ref], Terminology Mapping[ref] and SMART Oauth2 security[ref] specifications. The aim was not only to bridge the gap between patient care and research communities, but also to open to i2b2 new areas for better data types, security and interoperability management in the context of scalable solutions for cross border and cross domain networking of data.
+
 \section*{Methods}
 % Design, setting (if appropriate), patients or participants (if appropriate), interventions (if appropriate), and main outcome measurement
 
-The Figure \ref{fig1} shows the overall architecture and how the 3 tier i2b2 application articulates with 3 remote instution. The figure shows how i2b2 application gives access to users in a SMART-on-FHIR application context. In this context, users log one time in any SMART application or EHR, and get acces to their specialized applications available. Moreover, the architecture allows to mix queries over multiples endpoints: zero to one i2b2 star schema and/or zero to many SMART-on-FHIR APIs.
+To meet the objectives, the existing i2b2 CRC cell code source is extended with code that meet the SMART-on-FHIR API specifications and the FHIR search API specifications. The Figure \ref{fig1} shows the overall architecture and how the three-tier i2b2 application articulates with 3 remote institutions. The figure shows how i2b2 application gives access to users in a SMART-on-FHIR application context. In this context, users log one time in any SMART application or EHR, and get access to their specialized applications available. Moreover, the architecture allows to mix queries over multiples endpoints: zero to one i2b2 star schema and/or zero to many SMART-on-FHIR APIs.
+
 
 The Figure \ref{fig2} is a detailled UML. The scenario describes a user who query over an i2b2 instance with multiple remote FHIR-endpoints accesses. 
 The user first logs-in with its personnal secrets informations, that are verified by the i2b2 project management cell (i2b2pm). The i2b2pm then asks and stores a Oauth2 credential to all the SMART authentication services with it's own i2b2 connection details (one global secret for the i2b2 application) dedicated for the user. The i2b2pm returns then an i2b2 project list, to let the user choose and access according its habilitation details defined into i2b2. The user builds and run a multiple panel query accross different medical domains to get back a patient cohort set. The i2b2crc will then loop the following steps over each panel and each SMART-on-FHIR API. The i2b2crc transforms the query according to the FHIR-search specifications  and passes it with the credentials to the FHIR-API. The Oauth2 credential information are verified by the FHIR-API, and the query extended with the coding with synonyms defined in the terminology conceptMapping. The resulting query is then translated by the FHIR-API in the local database dialect to fetch the result. The result is transformed into a FHIR json bundle only containing the information needed (patient\_ids in this case). A parsing step extract the patient\_ids. They are mapped to an i2b2 unique identifier thanks to the existing i2b2 patient\_mapping features, to be then pushed into a CRC temporary table that integrates all the results. Once looping done, the i2b2crc applies the patients security steps to the CRC tmp table in order to only keep the patients that are available for the project selected by the user. The patient cohort set is finally returned to the user.
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=.4]{overall.pdf}
 	\caption{Overall Diagram}
 \label{fig1}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=.5]{diagram_sequence.pdf}
 \caption{UML Sequence Diagram}
 \label{fig1}
 \end{figure}
-%- sequence diagram (user, i2b2, i2b2 database, smart, EMR database)
-%- Example of http queries produced by i2b2-fhir-search
-%- Optimisation, ask only for elements needed by i2b2
 
-
-\textit{Outcome measurement:}In order to test the FHIR DSTU3 68 resources coverage compatibility, the HAPI FHIR test server has been used has endpoint since it contains useful demo datasets. The benchmark comparing traditionnal i2b2 and FHIR-i2b2 has been done with the same i2b2 observation\_fact table (postgresql 9.6). The first is based on a 1.7 i2b2 incance. The FHIR-i2b2 has been setup by implementing HAPI-FHIR server on top of the observation\_fact table into an apache tomcat 9 webserver, and accessed via a the FHIR-i2b2 prototype. The FHIR-i2b2 big-data benchmark has been setup by implementing HAPI-FHIR server on top of a MIMICiii table multiplied by 15, and stored in a apache HIVE2 table distributed over a 5 computer cluster in ORC format.
-
-\section*{Results}
-% Key findings
-
-\begin{figure}[h!]
+\begin{table}[h]
 \centering
-\includegraphics[scale=.7]{graph2.pdf}
-	\caption{Traditionnal versus SMART-on-FHIR performances comparison (on a 150M postgreSQL table)}
-\label{fig1}
-\end{figure}
+	\begin{tabular}{|p{2cm}|p{6cm}|p{5cm}|}
+  \hline
+		\textbf{ontology table columns}    & \textbf{Description} & \textbf{Example} \\ \hline
+		c\_basecode  &  FHIR code\_system / code pipe separated  & FHIR:http://loinc.com$|$1234-5  \\ \hline
+		c\_facttable  &  Resource / Profile pipe separated  & Observation$|$ObservationAphp  \\ \hline
+		c\_metadataxml  &  An xml describing datatype (numeric, free text or enumerated) and measure units  & cf: i2b2 documentation   \\ \hline
+		c\_concept\_cd  &  an optionnal additional filter  & active=true\&status=final  \\ \hline
+  \end{tabular}
+	\label{tab1}
+\caption{i2b2 ontology adapted for FHIR}
+\end{table}
 
-\begin{figure}[h!]
+\begin{table}[h]
 \centering
-\includegraphics[scale=.7]{graph1.pdf}
-	\caption{SMART-on-FHIR performances (on a 5B Hive table)}
-\label{fig2}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{demo.png}
-	\caption{SMART-on-FHIR online demo screenshot}
-\label{fig3}
-\end{figure}
-\textit{Implementation Status: } The design presented below is not yet fully implemented. To date, the query builder is able to query on both star schema and one remote FHIR endpoint at a time. Logical relation between selection criteria represented as multiple i2b2 webclient panels are also possible. The constitution of a patient\_set is working and allows to apply constraint by dates, by values and by one or multiple codes. The code expansion based on FHIR terminology mapping is also implemented. A living demo is deployed at http://34.205.31.28/webclient/ and provided the screenshot presented in Figure \ref{fig3}. The panel 1 query searched into HAPI FHIR test server for patients with a set of loinc glucose codes having value lower than 100ml/dl in a range of 1979 to 2015 and mixed with the panel 2 with i2b2 patients having diagnosed related to circulatory system. The resulting patient\_set is about 8 patients.
-
-\textit{Performances: } The performances have been benchmarked (Figure \ref{fig1})versus a traditionnal i2b2 instance based on star schema with the same amount of data, and configuration. The histogram shows traditionnal are 20 times faster than the FHIR based version. The difference can be explained by the additionnal steps involved: the fetched resultset is transformed into a json bundle, sent over the network and then parsed. The performance factor tends to decrease with number of patient fetched. The second benchmark (Figure \ref{fig2}) experienced connecting to a apahce HIVE table on a HDFS big-data platform. The results shows the performances are compatible under the minute. Moreover, the barplot shows the major bottleneck is the FHIR Generation step. Such amount of data have never been described to be handle by i2b2 before since we approach here traditionnal RDBMS limitations. While traditionnal i2b2 outperforms the FHIR based one on modest datasets, the latter opens new perspectives by allowing to connect to specialized and optimized database systems.
-
+	\begin{tabular}{|p{6cm}|p{10cm}|}
+  \hline
+    \textbf{HTTP request}    & \textbf{Description}  \\ \hline
+		GET $<$FHIR-BASE$>$/$<$Resource$>$\newline?\_elements=$<$elements$>$\&code=$<$codes$>$\newline\&date=gt$<$date\_inf$>$\&date=lt$<$date\_sup$>$\newline\&$<$custom\_filter$>$  & Retrieves choosen $<$elements$>$ from resources optionally matching a date range or/and a list of $<$codes$>$  or/and a $<$custom\_filter$>$     \\ \hline
+	 GET $<$FHIR-BASE$>$/ConceptMapping\newline?target-code=$<$codes$>$\&target-system:in=$<$code-system$>$  & Retrieves all codes that are mapped to $<$codes$>$ \& $<$code-system$>$   \\ \hline
+  \end{tabular}
+	\label{tab2}
+\caption{Index of HTTP requests}
+\end{table}
 \begin{figure}
 \begin{lstlisting}[language=yaml]
 ---
@@ -163,8 +159,50 @@ Observation:
   \caption{FHIR resource YAML configuration file}
 	\label{conf1}
 \end{figure}
+\textit{FHIR-search:} FHIR search specifications describe how to communicate with a FHIR-API to get back a set of resources matching an HTTP query criteria. The present work exploits only the possibility to fetch one type of resource per query. This is sufficient because i2b2 traditionnal query search module (i2b2crc) allows combining multiple filters predicates processing each separately and then uses a deliberation step using temporary tables. The idea of the query builder extension, is to being able to replace the i2b2crc SQL queries acting over the star schema to fetche records identifiers (ID) with HTTP calls to a FHIR-API and then any database system behind. The HTTP calls enabled in this design are presented in Table \ref{tab1}. The first row is the general template used, and has an analogy with SQL syntax:
+\begin{itemize}
+	\item[SELECT:] The $<$elements$>$ pattern lists the resource elements that are returned by the FHIR-API. Depending on the user choise, patient ID, encounter ID, instance ID or date are retrieved. The way to retrieve those information from a given resource is described into the i2b2 FHIR config YAML file Figure 
+	\item[FROM:] The $<$Resource$>$ pattern is supposed to be replaced by any existing FHIR standard resource, or any profiled resource (modification of the standard to meet the local institutions constraints). 
+	\item [WHERE:] Both patterns $<$date\_inf$>$ and $<$date\_sup$>$ allows filtering the data based on date range. The $<$custom\_filter$>$ allows to combine a predefined pattern, such data status, or a user defined constraint by value query. The $<$codes$>$ pattern can optionally contain a list of coding (eg:SNOMED, LOINC\ldots).
+\end{itemize}
+\textit{FHIR-mapping:} The second row of the Table \ref{tab1} describe the template to enable the terminology mapping:
 
-\textit{i2b2 feature coverage: }i2b2 querying feature covers filtering patients facts by code, values, dates, thought patient history, within an encounter temporal window or even a free sequence of events. By adding new temporal table mechanisms, the present work allows all those features. Ence, it does not limit the existing set of functionalities. The Table \ref{tab1} shows how those feature are covered. The i2b2-FHIR configuration file Figure \ref{conf1} describes contains jsonPATH, which json elements contain respectively the patient ID, encounter ID, fact ID, and dates values. This is how i2b2 deliberation mecanisms can be populated, and the set build.
+%- sequence diagram (user, i2b2, i2b2 database, smart, EMR database)
+%- Example of http queries produced by i2b2-fhir-search
+%- Optimisation, ask only for elements needed by i2b2
+
+
+\textit{Outcome measurement:}In order to test the FHIR DSTU3 resources compatibility coverage, the HAPI FHIR test server has been used has endpoint since it contains useful demo datasets for the 68 resources. The benchmark comparing traditionnal i2b2 and FHIR-i2b2 has been done with the same i2b2 observation\_fact table containing 140 Milion records in a postgresql 9.6 instance. The first is based on a 1.7 i2b2 instance. The FHIR-i2b2 has been setup by implementing HAPI-FHIR server on top of the observation\_fact table into an apache tomcat 9 webserver, and accessed via a the FHIR-i2b2 prototype. The FHIR-i2b2 big-data benchmark has been setup by implementing HAPI-FHIR server on top of a MIMICiii table multiplied by 15, and stored in a apache HIVE2 table distributed over a 5 computer cluster in ORC format.
+ALl software used: i2b2, HAPI-FHIR, postgresql and apache Hive are open-source.
+
+\section*{Results}
+% Key findings
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{graph2.pdf}
+	\caption{Traditionnal versus SMART-on-FHIR performances comparison (on a 150M postgreSQL table)}
+\label{fig1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{graph1.pdf}
+	\caption{SMART-on-FHIR performances (on a 5B Hive table)}
+\label{fig2}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{demo.png}
+	\caption{SMART-on-FHIR online demo screenshot}
+\label{fig3}
+\end{figure}
+\textit{Implementation Status: } The design presented below is not yet fully implemented. To date, the query builder is able to query on both star schema and one remote FHIR endpoint simultaneously. Logical relation between selection criteria represented as multiple i2b2 webclient panels are also possible. The constitution of a patient\_set can be constraint by dates, by values and mesurement units and by one or multiple codes. The code expansion based on FHIR terminology mapping is also implemented. A living demo is deployed at http://34.205.31.28/webclient/ and its screenshot presented in Figure \ref{fig3}. The panel 1 query searched into HAPI FHIR test server for patients with a set of loinc glucose codes having value lower than 100ml/dl in a year range from 1979 to 2015 and is mixed with the panel 2 searching for patients diagnosed related to circulatory system within the star schema. The resulting patient\_set is about 8 patients.
+
+\textit{Performances: } The performances have been benchmarked (Figure \ref{fig1}) versus a traditionnal i2b2 instance based on star schema with the same amount of data, and configuration (140 Milion records). The histogram shows traditionnal i2b2 is 20 times faster than the i2b2-FHIR version. The difference can be explained by the additionnal steps involved: the fetched resultset is transformed into a json bundle, sent over the network and then parsed. The performance factor tends to decrease with number of patient matched. The second benchmark (Figure \ref{fig2}) experienced connecting to a apache HIVE table on a big-data platform. The results show that the time spent are under the minute and compatible with i2b2 promizes. Moreover, the barplots show that the major bottleneck is the FHIR json Generation step. Such amount of data have never been described to be handle by i2b2 before since we approach here traditionnal RDBMS limitations volumetry. While traditionnal i2b2 outperforms the FHIR based one on modest datasets, the latter opens new perspectives by allowing to connect to specialized and optimized database systems.
+
+
+\textit{i2b2 feature coverage: }i2b2 querying feature covers filtering patients facts by code, values, dates, thought patient history, within an encounter temporal window or even a free sequence of events. By adding new temporal table mechanisms, the present work allows all those features. Ence, it does not limit the existing set of functionalities. The i2b2-FHIR configuration file Figure \ref{conf1} contains information about the FHIR-API instance, such its version, and how the resources are implemented. Depending on the kind of cohort set, the user want to extract, patient ID, encounter ID, instance ID or dates are retrived from the FHIR-API thanks to a jsonPATH description. This then allows to populate the CRC temporary tables. This is how i2b2 deliberation mecanisms can be populated, and the set build. The Table \ref{tab1} shows how those features are covered.
 
 \textit{Security: }A security layer has been proposed and implemented into the existing CRC cell. A new i2b2 table allows to define witch patient are part of wich project. This security layer is important because it allows with one endpoint with all patients records, to create multiple projects with subset. In terms of performances, the table might be vertivally partitionned and splitted by project, in order to get stable performances while number of project will increase. This mecanism is both compatible with traditionnal i2b2 and i2b2-SMART-on-FHIR and has been deployed in production and handle more than distinct 200 projects.
 The Oauth2 security layer has not yet been implemented. The implementation will inspire from project\cite{ref2,ref3} that recently succeed in.
@@ -174,31 +212,6 @@ The Oauth2 security layer has not yet been implemented. The implementation will 
 \textit{Interoperability: }FHIR conceptMapping objects have been produced to make the proof of concept. The Table \ref{tab2} shows the HTTP query used to retrieve the equivalent code. The concpetMapping are then parsed to only collect the "exact-matches" codes. The FHIR-search query is then extended with the collected code-systems/codes. The design allows to query multiple FHIR endpoints using diffetent terminologies. However, this does not allow to match valuesets. While their is some field of improvement, the results open area for massive and collaborative concept mapping, with a terminolgy server ready.
 By querying over the conceptMapping resources, the CRC cell is able to expand the query to fetch all synonyms. This design allows implementers to align accross different code systems, or to define mapping within the same code system. Since the FHIR-configuration allows to use a specific ConceptMapping endpoint, this allows to federate queries and use only one terminology server where concept mapping is done in collaboration.
 
-\begin{table}[h!]
-\centering
-	\begin{tabular}{|p{2cm}|p{6cm}|p{5cm}|}
-  \hline
-		\textbf{ontology table columns}    & \textbf{Description} & \textbf{Example} \\ \hline
-		c\_basecode  &  FHIR code\_system / code pipe separated  & FHIR:http://loinc.com$|$1234-5  \\ \hline
-		c\_facttable  &  Resource / Profile pipe separated  & Observation$|$ObservationAphp  \\ \hline
-		c\_metadataxml  &  An xml describing datatype (numeric, free text or enumerated) and measure units  & cf: i2b2 documentation   \\ \hline
-		c\_concept\_cd  &  an optionnal additional filter  & active=true\&status=final  \\ \hline
-  \end{tabular}
-	\label{tab1}
-\caption{i2b2 ontology adapted for FHIR}
-\end{table}
-
-\begin{table}[h!]
-\centering
-	\begin{tabular}{|p{6cm}|p{10cm}|}
-  \hline
-    \textbf{HTTP request}    & \textbf{Description}  \\ \hline
-		GET $<$FHIR-BASE$>$/$<$Resource$>$\newline?\_elements=$<$elements$>$\&code=$<$codes$>$\newline\&date=gt$<$date\_inf$>$\&date=lt$<$date\_sup$>$\newline\&$<$custom\_filter$>$  & Retrieves choosen $<$elements$>$ from resources optionally matching a date range or/and a list of $<$codes$>$  or/and a $<$custom\_filter$>$     \\ \hline
-	 GET $<$FHIR-BASE$>$/ConceptMapping\newline?target-code=$<$codes$>$\&target-system:in=$<$code-system$>$  & Retrieves all codes that are mapped to $<$codes$>$ \& $<$code-system$>$   \\ \hline
-  \end{tabular}
-	\label{tab2}
-\caption{Index of HTTP requests}
-\end{table}
 
 
 \section*{Conclusion} 
@@ -232,7 +245,7 @@ Last but not least concept mapping between many institutions and languages remai
 %This sentence has two reference citations\cite{ref1,ref2}.
 %
 %More text of an additional paragraph, with a figure reference (Figure ~\ref{fig1}) and a figure inside a Word text box below.  Figures need to be placed as close to the corresponding text as possible and not extend beyond one page.\\
-%\begin{figure}[h!]
+%\begin{figure}[h]
 %\centering
 %\includegraphics[scale=1]{pics/figure1.png}
 %\caption{Total allergy alerts, overridden alerts, or drug order cancelled.}
@@ -243,7 +256,7 @@ Last but not least concept mapping between many institutions and languages remai
 %
 %This paragraph contains a reference to a table just below (Table 1).  All tables need to be placed as close to the corresponding text as possible, But each individual table should be on one page and not extend to multiple pages unless labeled as ``��Continued"��.
 %
-%\begin{table}[h!]
+%\begin{table}[h]
 %\centering
 %\caption{Submission type, abstract length, and page length maximum for AMIA submissions.}
 %  \begin{tabular}{|l|l|l|}
