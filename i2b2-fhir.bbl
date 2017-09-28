@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{}
+
+
+\bibitem{Johnson:SD2016}
+AE~Johnson, TJ~Pollard, L~Shen, LW~Lehman, M~Feng, M~Ghassemi, B~Moody,
+  P~Szolovits, LA~Celi, and RG~Mark.
+\newblock {MIMIC}-{III}, a freely accessible critical care database.
+\newblock {\em Sci Data}, 3:160035, May 24 2016.
+
+\bibitem{Klann:JAMIA2016}
+JG~Klann, A~Abend, VA~Raghavan, KD~Mandl, and SN~Murphy.
+\newblock Data interchange using i2b2.
+\newblock {\em J Am Med Inform Assoc}, 23(5):909--915, Sep 2016.
+
+\end{thebibliography}

@@ -63,7 +63,7 @@
 
 \noindent{\bf Abstract}
 
-\textit{Integrating Biology and the Bedside (i2b2) is the de-facto open-source medical tool for cohort discovery. Fast Healthcare Interoperability Resources (FHIR) is a new standard for exchanging health care information electronically. Substitutable Modular third-party Applications (SMART) defines the SMART-on-FHIR specification on how applications shall interface with EHR thought FHIR. Related work made it possible to produce FHIR from an i2b2 instance or i2b2 to store FHIR datasets. In this paper, we extend i2b2 to search remotely into one or multiple SMART-on-FHIR APIs. This enables the federation of queries, security, terminology mapping, and also bridges the gap between i2b2 and modern big-data technologies.}
+\textit{Integrating Biology and the Bedside (i2b2) is the de-facto open-source medical tool for cohort discovery. Fast Healthcare Interoperability Resources (FHIR) is a new standard for exchanging health care information electronically. Substitutable Modular third-party Applications (SMART) defines the SMART-on-FHIR specification on how applications shall interface with  Electronic Health Records (EHR) thought FHIR. Related work made it possible to produce FHIR from an i2b2 instance or i2b2 to store FHIR datasets. In this paper, we extend i2b2 to search remotely into one or multiple SMART-on-FHIR Application Programming Interfaces (APIs). This enables the federation of queries, security, terminology mapping, and also bridges the gap between i2b2 and modern big-data technologies.}
 %[h150  words]Programmatic themes: Translational
 %Keywords: Cohort Discovery, Data integration and standardization, Informatics implementation
 
@@ -79,22 +79,19 @@
 %
 %This work is a general interface between i2b2 \& FHIR, exploiting the FHIR search[ref], Terminology Mapping[ref] and  SMART Oauth2 security[ref] specifications. The results does not only bridge the gap between two active communities, it opens to i2b2 new areas for data federation, data type hangling, security, interoperability and addresses the problem described above.
 \remPierre{L'article actuellement fait trop ingénierie à mon avis. Il faudrait dans l'introduction commencer par établier les problèmes à résoudre (quelles sont les limitations des EHR actuels ?), puis indiquer des solutions envisagées ou testées dans les travaux antérieurs (...) et finir sur celle que tu proposes. L'évaluation devrait montrer dans quelle mesure ton travail résout les problèmes notés au départ.}
+\remNico{j'ai fait les modifs suivantes dans le déroulé(je rajouterai une couche de vernis, si tant est que c'est mieux qu'avant): Objectif(learning health system);Solution actuelle(i2b2);problemes posés;solutions(FHIR);RelatedWork;Solution proposée.}
 Learning Health Systems aim to maximize the potential of large-scale, harmonized data from variable, quickly-developing digital sources including Electronic Health Records (EHRs) emerging as powerful tools to facilitate discoveries that can improve health. Data heterogeneity is one of the critical problems in analyzing, reusing, sharing or linking datasets. With the development of platforms enabling the linking and federation of phenome, genome and exposome data across sites in US\cite{ref5,ref6} Europe\cite{ref7,ref8} or at international scale\cite{ref9} a key challenge is to define harmonized access to heterogeneous EHR-based data.
 
-In the domain of patient care, several large-scale efforts have been underway for over a decade with the goal of specifying both the structure and the semantics of patient clinical information in a manner that enables computable semantic interoperability between diverse systems. Two major contributions to the interoperability of clinical information currently dominate internationally: i) the ISO EN 13606 is a generic and comprehensive representation for the interchange of EHR information between heterogeneous systems suited to the extraction, communication and/or mapping of longitudinal EHR data or of fine grained parts of an EHR. The openEHR Foundation maintains a more detailed model, catering for the widest set of use cases for patient level data; ii) the Health Level Seven (HL7) Fast Healthcare Interoperability Resources (FHIR), built on lessons\cite{ref10} from previous standards including the Reference Information Model (RIM) that became an ISO standard in 2003 and Clinical Document Architecture, designed to express a single clinical document as a message using HL7 version 3 RIM classes.
+i2b2 is the de-facto open-source medical tool for cohort discovery and allows healthcare practitioners to easily subset patient data to address research questions. Many initiatives have extended this primary goal with statistical analysis on place, federating queries over multiple centers\cite{shrine,insite,trinetx} , and even genomics analytics.\cite{transmart,i2b2-transmart}. Its recent migration on github allows multiple developers to improve and extend the source code. I2b2 has been described to be used by more than 200 hospitals over the world. The tool is flexible and can support its own stars schema and ontology model, or exploit new information models e.g. PCORnet\cite{pcornet} or OMOP common data model\cite{ref14} - without requiring changes to the underlying data. 
 
-Both EN ISO 13606 and HL7 FHIR standards define the semantics of patient care data and clearly demonstrate the need for layers of semantic expressiveness including: i) generic reference information models of concepts and relationships (e.g. EN ISO 13606, openEHR Reference Model or FHIR model) each capable of binding terms from terminology models (e.g. SNOMED-CT, LOINC, etc.) and associated with a data type models such as ISO 21090; and ii) more detailed models (e.g. EN ISO 13606 or openEHR Archetypes/Templates or FHIR resources). 
+i2b2 and derived solutions do have fields of improvement.  In terms of \textit{data variety}, each federation tools listed below proposes or not their own terminology mapping processes\cite{shrine}. When they exist\cite{ehr4crlesson}, they are time consuming and software specific\cite{i2b2map}.  In terms of \textit{freshness of the data}, Extract Transform Load processes (ETL) feeding the traditional relational databases supported by the tool (postgreSQL, Oracle, MSSQL) are time, resource, maintenance and disk space consuming. Though ETL are still feasible these days, the emergence of high throughput healthcare data and the Internet of Things requires the development of new approaches that allows querying data in place (directly in EHRs) or in optimized, dedicated places. This time delta due to data migrations and transformations poses problems of \textit{data veracity} because the source data is succeptible to be modified in the interval, and multiple transformation are error prone.  In terms of \textit{data volumetry}, data producer of interest for patient care such omics, exposomics, imaging or free text notes are challenging to store and also to analyse. They all need specialized and dedicated technology to be analysed properly and efficiently. While they have been several ingeniering attempts to make i2b2 based datawarhouses solution working with other technologies than traditional relational databases, the cost to create interfaces is high\cite{i2b2nosql}. The i2b2 star schema model, is highly optimized for fast retrieving lists of patients matching criteria. It is not intended for statistical analytics or data exploration\cite{i2b2export}. While they are some bridge with other common data-model [PCORNET, OMOP], the architecture is still based on RDBMS\cite{pcornet}The new technology emmergence is faster than i2b2 ability to exploit them.  In terms of \textit{software accessibility}, physician spend time switching from application, writing their login/password again \& again. Providing them the paradigm "one login/multiple applications" would paradoxaly improve the security, because this allow choosing a stronger password. Morover, this would optimize the time spent on computer and thus, improve patient care.
 
-Although there is no consensus in the medical informatics community regarding a standard patient information model, HL7 FHIR specifications are gaining interest and show promise to mitigate the classic site-specific data mapping problem. FHIR specifies a RESTful application programming interface (API) to access resources. Several initiatives ima ti\remPierre{ima ti?}\ facilitate the adoption of FHIR, including the Argonaut project\cite{ref11}, the Data Access Framework\cite{ref12} and the Clinical Information Modeling Initiative (CIMI). Launched in 2011, an international consortium of representing national bodies, Standards Development Organizations, healthcare organizations and vendors are building collaboratively a process and tools for constructing a single curated collection of shared implementable clinical information models that are free for use at no cost (10.
+In the domain of patient care, several large-scale efforts have been underway for over a decade with the goal of specifying both the structure and the semantics of patient clinical information in a manner that enables computable semantic interoperability between diverse systems. Although there is no consensus in the medical informatics community regarding a standard patient information model, Health Level Seven (HL7) Fast Healthcare Interoperability Resources (FHIR) specifications are gaining interest and show promise to mitigate the classic site-specific data mapping problem. Built on lessons\cite{ref10} from previous standards including the Reference Information Model (RIM) that became an ISO standard in 2003 and Clinical Document Architecture, designed to express a single clinical document as a message using HL7 version 3 RIM classes. FHIR specifies a RESTful application programming interface (API) to access resources. Several initiatives facilitate the adoption of FHIR, including the Argonaut project\cite{ref11}, the Data Access Framework\cite{ref12} and the Clinical Information Modeling Initiative (CIMI)\cite{cimi}. 
 
 SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health (11. SMART success improve the user experience exaclty the same major internet provide access to many application with a single authentification.
 
-i2b2 is the de-facto open-source medical tool for cohort discovery and allows healthcare practitioners to easily subset patient data to address research questions. Many initiatives have extended this primary goal with statistical analysis on place, federating queries over multiple centers [shrine, insite, triknetX], and even genomics analytics.[transmart, i2b2-transmart]. Its recent migration on github allows multiple developers to improve and extend the source code. I2b2 has been described to be used by more than 200 hospitals over the world. The tool is flexible and can support its own stars schema and ontology model, or exploit new information models e.g. PCORnet\cite{ref13} or OMOP common data model\cite{ref14} - without requiring changes to the underlying data. Extract Transform Load processes (ETL)  feeding the traditional relational databases supported by the tool (postgreSQL, Oracle, MSSQL) are time, resource, maintenance and disk space consuming processes. Though ETL are still feasible these days, the emergence of high throughput healthcare data and the Internet of Things requires the development of new approaches.
-
-The objectives of this work are to bring the latest accomplishments of the FHIR community to i2b2. In particular, bring the flexibility, the extensibility, the standardisation, and the interoperability efforts to i2b2.
+Several work explored how to bridge i2b2 and FHIR. One approach\cite{apple} aims at allowing mobile phones to push FHIR resources into the i2b2 star schema. Other approaches\cite{wag,zappy} allow existing i2b2 instance to supply their star schema datasets as FHIR-API and allow to plug SMART-on-FHIR application on top of i2b2. The objectives of this work are to bring the latest accomplishments of the FHIR community to i2b2. In particular, bring the flexibility, the extensibility, the standardisation, and the interoperability efforts to i2b2.
 This work describes a general interface between i2b2 and any type of clinical dataset derived by exploiting the FHIR search\cite{}, Terminology Mapping\cite{} and SMART Oauth2 security\cite{} specifications. The aim was not only to bridge the gap between patient care and research communities, but also to open to i2b2 new areas for better data types, security and interoperability management in the context of scalable solutions for cross border and cross domain networking of data. \remXavier{des exemples concrets de problèmes posés qui vont être résolus par ce travail ?}
-
-
 
 \section*{Methods}
 % Design, setting (if appropriate), patients or participants (if appropriate), interventions (if appropriate), and main outcome measurement
@@ -102,7 +99,7 @@ This work describes a general interface between i2b2 and any type of clinical da
 To meet the objectives, the existing i2b2 CRC cell code source is extended with code that meet the SMART-on-FHIR API specifications and the FHIR search API specifications. Figure \ref{fig1} \remXavier{attention aux labels des figures, la référence n'est pas bonne} shows the overall architecture and how the three-tier i2b2 application articulates with 3 remote institutions. The figure shows how i2b2 application gives access to users in a SMART-on-FHIR application context. In this context, users log one time in any SMART application or EHR, and get access to their specialized applications available. Moreover, the architecture allows to mix queries over multiples endpoints: zero to one i2b2 star schema and/or zero to many SMART-on-FHIR APIs.
 
 
-Figure \ref{fig2} is a detailled UML. The scenario describes a user who query over an i2b2 instance with multiple remote FHIR-endpoints accesses. 
+Figure \ref{fig2} is a detailled UML. The scenario describes a user who query over an i2b2 instance with multiple remote FHIR-endpoints accesses. \remNico{mis des couleurs,  reste à préciser que tout ce qui concerne les instances SMART Authentication/FHIR API / EHR database}
 The user first logs-in with its personnal secrets informations, that are verified by the i2b2 project management cell (i2b2pm). The i2b2pm then asks and stores a Oauth2 credential to all the SMART authentication services with it's own i2b2 connection details (one global secret for the i2b2 application) dedicated for the user\remXavier{Est-ce nécessaire de détailler l'authentification ?}. The i2b2pm returns then an i2b2 project list, to let the user choose and access according its habilitation details defined into i2b2. The user builds and run a multiple panel query accross different medical domains to get back a patient cohort set. The i2b2 query search module (i2b2crc) will then loop the following steps over each panel and each SMART-on-FHIR API. The i2b2crc transforms the query according to the FHIR-search specifications  and passes it with the credentials to the FHIR-API. The Oauth2 credential information are verified by the FHIR-API, and the query extended with the coding with synonyms defined in the terminology ConceptMap. The resulting query is then translated by the FHIR-API in the local database dialect to fetch the result. The result is transformed into a FHIR json bundle only containing the information needed (patient\_ids in this case). A parsing step extract the patient\_ids. They are mapped to an i2b2 unique identifier thanks to the existing i2b2 patient\_mapping features, to be then pushed into a CRC temporary table that integrates all the results. Once looping done, the i2b2crc applies the patients security steps to the CRC tmp table in order to only keep the patients that are available for the project selected by the user. The patient cohort set is finally returned to the user.\remXavier{Qu'est-ce qui est spécifique dans la "nouvelle" architecture ? le bleu de la figure ? pas clair}
 
 \begin{figure}[h]
@@ -114,7 +111,7 @@ The user first logs-in with its personnal secrets informations, that are verifie
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.5]{diagram_sequence.pdf}
+\includegraphics[scale=.5]{sequence_diagram.pdf}
 \caption{UML Sequence Diagram}
 \label{fig1}
 \end{figure}
@@ -169,7 +166,7 @@ Observation:
 \begin{itemize}
 	\item[SELECT:] The $<$elements$>$ pattern lists the resource elements that are returned by the FHIR-API. Depending on the user choise, patient ID, encounter ID, instance ID or date are retrieved. The way to retrieve those information from a given resource is described into the i2b2 FHIR config YAML file Figure \ref{conf1}.
 	\item[FROM:] The $<$Resource$>$ pattern is supposed to be replaced by any existing FHIR standard resource, or any profiled resource (modification of the standard to meet the local institutions constraints). In order to let the user point to the right RHIR resource, the i2b2 traditional ontology table has been reused and populated with the information. The Table \ref{tab1} describe how to store the information into the column "c\_facttable".
-	\item [WHERE:] Both patterns $<$date\_inf$>$ and $<$date\_sup$>$ allows filtering the data based on date range. The $<$custom\_filter$>$ allows to combine a predefined pattern, such data status, or a user defined constraint by value query. The $<$codes$>$ pattern can optionally contain a list of coding (e.g: SNOMED, LOINC\ldots). Again, the i2b2 ontology table (Table \ref{tab1}) contains the codes informations in c\_basecode. While the date constraints are defined by the user at run time, they are not stored, the value constraint is enabled by filling the "c\_metadataxml" column, as described into the i2b2 documentation.\remXavier{un peu trop détaillé ?}
+	\item [WHERE:] Both patterns $<$date\_inf$>$ and $<$date\_sup$>$ allows filtering the data based on date range. The $<$custom\_filter$>$ allows to combine a predefined pattern, such data status, or a user defined constraint by value query. The $<$codes$>$ pattern can optionally contain a list of coding (e.g: SNOMED, LOINC\ldots). Again, the i2b2 ontology table (Table \ref{tab1}) contains the codes informations in c\_basecode. While the date constraints are defined by the user at run time, they are not stored, the value constraint is enabled by filling the "c\_metadataxml" column, as described into the i2b2 documentation.\remXavier{un peu trop détaillé ?} \remNico{je vais clarifier voire simplifier}
 \end{itemize}
 \textit{FHIR-mapping:} The second row of the Table \ref{tab2} describes the HTTP query template to enable the terminology mapping. It is then possible to the i2b2crc to use this functionnality to fetch semantical synonyms that are described into the FHIR-Terminology server. As part of the ConceptMap\cite{ref15} resource, FHIR links a source code to a target with a set of semantic "equivalence" such "equivalent" or "narrower" that caracterize the way they relate together. The program fetches each mapping pairs and only keep the "wider", "subsumes", "equal", and "equivalent" semantic equivalence sources. The i2b2-FHIR code expansion exploits this mecanism to query over distinct codes systems.
 
@@ -211,7 +208,7 @@ All softwares used: i2b2, HAPI-FHIR, postgresql and apache Hive are open-source 
 \textit{i2b2 feature coverage: }i2b2 querying feature covers filtering patients facts by code, values, dates, thought patient history, within an encounter temporal window or even a free sequence of events. By adding new temporal table mechanisms, the present work allows all those features. Ence, it does not limit the existing set of functionalities. The i2b2-FHIR configuration file Figure \ref{conf1} contains information about the FHIR-API instance, such its version, and how the resources are implemented. Depending on the kind of cohort set, the user want to extract, patient ID, encounter ID, instance ID or dates are retrived from the FHIR-API thanks to a jsonPATH description. This then allows to populate the CRC temporary tables. This is how i2b2 deliberation mecanisms can be populated, and the set build. The Table \ref{tab2} shows how those features are covered.
 
 \textit{Security: }A security layer has been proposed and implemented into the existing CRC cell. A new i2b2 table allows to define witch patient are part of wich project. This security layer is important because it allows with one endpoint with all patients records, to create multiple projects with subset. In terms of performances, the table might be vertivally partitionned and splitted by project, in order to get stable performances while number of project will increase. This mecanism is both compatible with traditional i2b2 and i2b2-SMART-on-FHIR and has been deployed in production and handle more than distinct 200 projects.
-The Oauth2 security layer has not yet been implemented. The implementation will inspire from project\cite{ref2,ref3} that recently succeed in.
+The Oauth2 security layer has not yet been implemented. The implementation will inspire from project\cite{wag,apple} that recently succeed in.
 
 \textit{Extensibility:} The FHIR access layer has been tested over the HAPI FHIR test server for all resources at least to refearing to a patient (68 resources), and does have a complete resource coverage. To date, the query builder is conpatible with last FHIR DSTU3 version. In the future, it will be compatible with each FHIR release, and maintain backward compatibilities. The FHIR version of each endpoint is setup in the configuration file (Figure \ref{conf1}). The query builder handles the FHIR extensibility, local profiled resources or even local new resources. Moreover, the design allows to filter based on FHIR extensions (https://www.hl7.org/fhir/extensibility.html\#extension). The results let conclude the design is flexible enougth to query multiple centers with different fHIR implementation at the same time.
 
@@ -219,14 +216,9 @@ The Oauth2 security layer has not yet been implemented. The implementation will 
 Interoperability is also derived from the FHIR standard resource difinition. However, the ability to derive from them and build Profiled Resources is catched by the i2b2-FHIR YAML configuration flexibility together with the i2b2 ontology table, as they are designed to be adapted.
 
 
-\section*{Conclusion} 
-\remXavier{on conclut avant de discuter ?}
-The main contribution of the work is to pave the way for cohort-generation process by leveraging standard access, with interoperable terminology systems and state of the art security methods. The hospital centers international effort to converge to FHIR data exchange layer[ref] will ease the data-federation to query center without dedicated datawareouhsing staff. The main advantage over other approach to federate clinical repository such SHRINE, or Insite, is it benefits from FHIR ConceptMap and FHIR search that are already in place for other uses case in the institutions.
-The secondary contribution of the work is to allow implementers to use their own technology, and allow i2b2 instance to benefits from the fast past and future improvements on big-data technologies.
-
-Cross-border networking coordination and new technologies for data integration facilitates interoperability among research networks. Clinical research is on the threshold of a new era in which electronic health records (EHRs) are gaining an important novel supporting role. i2b2 has been extended to allow multicentric querying within research networks.  This paper proposed a new approach for linking i2b2 to EHRs.
 
 \section*{Discussion}
+\remNico{Compte tenue des problématiques évoqué en intro, je vais adapter discussion et conclusion}
 % Key conclusions with direct reference to the foundational or methodological advancement or biomedical application
 %- the performances open new area such Genomics\cite{ref4}, Imaging, Physiological Monitoring or even for i2b2 applications to discover new cohorts.
 %- the security is renforced and allows multiple sub project to acces to subset of the whole patients. This addresses the patient research opposition and allows studies to only access to data they need. Moreover, it brings the last security technologies and allows federated architechture possible.
@@ -246,6 +238,13 @@ A general algoritm to translate FHIR terminologies into i2b2 ontology will also 
 
 Last but not least concept mapping between many institutions and languages remains to be done. Since all are based on different languages, different granularity and different concept and practices, this remains a challenge to be adressed. While ontology matching has a long exp, this research area is still challenging.
 
+\section*{Conclusion} 
+\remXavier{on conclut avant de discuter ?}
+\remNico{je m'étais fié au plan AMIA...}
+The main contribution of the work is to pave the way for cohort-generation process by leveraging standard access, with interoperable terminology systems and state of the art security methods. The hospital centers international effort to converge to FHIR data exchange layer[ref] will ease the data-federation to query center without dedicated datawareouhsing staff. The main advantage over other approach to federate clinical repository such SHRINE, or Insite, is it benefits from FHIR ConceptMap and FHIR search that are already in place for other uses case in the institutions.
+The secondary contribution of the work is to allow implementers to use their own technology, and allow i2b2 instance to benefits from the fast past and future improvements on big-data technologies.
+
+Cross-border networking coordination and new technologies for data integration facilitates interoperability among research networks. Clinical research is on the threshold of a new era in which electronic health records (EHRs) are gaining an important novel supporting role. i2b2 has been extended to allow multicentric querying within research networks.  This paper proposed a new approach for linking i2b2 to EHRs.
 %\section*{Conclusion}
 %Your conclusion goes at the end, followed by References, which must follow the Vancouver Style (see: www.icmje.org/index.html).  References begin below with a header that is centered.  Only the first word of an article title is capitalized in the References. 
 %\section*{Another Major Heading and References}
@@ -285,16 +284,34 @@ Last but not least concept mapping between many institutions and languages remai
 %This is another paragraph.
 
 
+Voici des exemples de citations: MIMIC-III\cite{Johnson:SD2016} i2b2 \cite{Klann:JAMIA2016} et les références se mettent toutes seules dans la biblio ! Je pense que la référence vide numéro 1 vient d'un \verb+\cite{}+ avec argument vide.
+
 \makeatletter
 \renewcommand{\@biblabel}[1]{\hfill #1.}
 \makeatother
 
-
-
 \bibliographystyle{unsrt}
+\bibliography{biblio}
 \begin{thebibliography}{1}
-\setlength\itemsep{-0.1em}
 
+
+\bibitem{transmart}
+Scheufele E, Aronzon D, Coopersmith R, McDuffie MT, Kapoor M, Uhrich CA, et al. tranSMART: an open source knowledge management and high content data analytics platform. AMIA Summits on Translational Science Proceedings. 2014;2014:96. 
+
+\bibitem{shrine}
+Weber GM, Murphy SN, McMurry AJ, MacFadden D, Nigrin DJ, Churchill S, et al. The Shared Health Research Information Network (SHRINE): A Prototype Federated Query Tool for Clinical Data Repositories. Journal of the American Medical Informatics Association. 2009 Sep 1;16(5):624–30. 
+
+\bibitem{ehr4crlesson}
+Girardeau Y, Doods J, Zapletal E, Chatellier G, Daniel C, Burgun A, et al. Leveraging the EHR4CR platform to support patient inclusion in academic studies: challenges and lessons learned. BMC Medical Research Methodology [Internet]. 2017 Dec [cited 2017 Sep 28];17(1). Available from: http://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-017-0299-3
+
+\bibitem{trinetx}
+https://www.trinetx.com/
+
+\bibitem{insite}
+https://www.insiteplatform.com/
+
+\bibitem{i2b2-transmart}
+https://avillach-lab.hms.harvard.edu/
 
 \bibitem{ref5}
 Gottesman O, Kuivaniemi H, Tromp G, Faucett WA, Li R, Manolio TA, et al. The Electronic Medical Records and Genomics (eMERGE) Network: past, present, and future. Genet Med Off J Am Coll Med Genet. oct 2013;15(10):761--71.
@@ -314,7 +331,7 @@ Hripcsak G, Duke JD, Shah NH, Reich CG, Huser V, Schuemie MJ, et al. Observation
 \bibitem{ref10}
 Rosenbloom ST, Carroll RJ, Warner JL, Matheny ME, Denny JC. Representing Knowledge Consistently Across Health Systems. Yearbook of Medical Informatics. 2017 Aug;26(01):139--47. 
 
-\bibitem{ref13}
+\bibitem{pcornet}
 Klann JG, Abend A, Raghavan VA, Mandl KD, Murphy SN. Data interchange using i2b2. Journal of the American Medical Informatics Association. 2016 Sep;23(5):909–15. 
 
 \bibitem{ref17}
@@ -328,6 +345,9 @@ https://www.hl7.org/fhir/conceptmap.html
 
 \bibitem{ref16}
 http://34.205.31.28/webclient/
+
+\bibitem{apple}
+Pfiffner PB, Pinyol I, Natter MD, Mandl KD. C3-PRO: Connecting ResearchKit to the Health System Using i2b2 and FHIR. Seo J-S, editor. PLOS ONE. 2016 Mar 31;11(3):e0152722. 
 
 \bibitem{ref18}
 Alterovitz G, Warner J, Zhang P, Chen Y, Ullman-Cullere M, Kreda D, et al. SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps. Journal of the American Medical Informatics Association. 2015 Jul 21;ocv045. 
@@ -343,14 +363,26 @@ Pryor TA, Gardner RM, Clayton RD, Warner HR. The HELP system. J Med Sys. 1983;7:
 \bibitem{ref2}
 Gardner RM, Golubjatnikov OK, Laub RM, Jacobson JT, Evans RS. Computer-critiqued blood ordering using the HELP system. Comput Biomed Res 1990;23:514-28.
 
-\bibitem{ref2}
+\bibitem{wag}
 Wagholikar KB, Mandel JC, Klann JG, Wattanasin N, Mendis M, Chute CG, et al. SMART-on-FHIR implemented over i2b2. Journal of the American Medical Informatics Association. 2016 Jun 6;ocw079. 
 
-\bibitem{ref3}
-Pfiffner PB, Pinyol I, Natter MD, Mandl KD. C3-PRO: Connecting ResearchKit to the Health System Using i2b2 and FHIR. Seo J-S, editor. PLOS ONE. 2016 Mar 31;11(3):e0152722. 
+\bibitem{zappy}
+Boussadi A, Zapletal E. A Fast Healthcare Interoperability Resources (FHIR) layer implemented over i2b2. BMC Medical Informatics and Decision Making [Internet]. 2017 Dec [cited 2017 Sep 25];17(1). Available from: http://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-017-0513-6
 
 \bibitem{ref4}
 Alterovitz G, Warner J, Zhang P, Chen Y, Ullman-Cullere M, Kreda D, et al. SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps. Journal of the American Medical Informatics Association. 2015 Jul 21;ocv045. 
+
+\bibitem{i2b2nosql}
+Wang S, Pandis I, Wu C, et al. High dimensional biological data retrieval optimization with NoSQL technology. BMC Genomics. 2014;15(Suppl 8):S3. doi:10.1186/1471-2164-15-S8-S3.
+
+\bibitem{cimi}
+Mission and Goals | www.opencimi.org [Internet]. [cité 27 sept 2017]. Disponible sur: http://www.opencimi.org/
+
+\bibitem{i2b2map}
+Wynden R, Weiner MG, Sim I, Gabriel D, Casale M, Carini S, et al. Ontology mapping and data discovery for the translational investigator. Summit on Translational Bioinformatics. 2010;2010:66. 
+
+\bibitem{i2b2export}
+Firnkorn D, Merker S, Ganzinger M, Muley T, Knaup P. Unlocking Data for Statistical Analyses and Data Mining: Generic Case Extraction of Clinical Items from i2b2 and tranSMART. Stud Health Technol Inform. 2016;228:567-71.
 
 \end{thebibliography}
 \end{document}
