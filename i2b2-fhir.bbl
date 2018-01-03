@@ -182,6 +182,11 @@ AE~Johnson, TJ~Pollard, L~Shen, LW~Lehman, M~Feng, M~Ghassemi, B~Moody,
 \newblock \url{http://34.205.31.28/webclient/}.
 \newblock Accessed: 2017-09-28.
 
+\bibitem{GRAPHQL}
+{FHIR} graphql specifications.
+\newblock \url{https://build.fhir.org/graphql.html}.
+\newblock Accessed: 2018-01-03.
+
 \bibitem{Alterovitz_2015}
 Gil Alterovitz, Jeremy Warner, Peijin Zhang, Yishen Chen, Mollie
   Ullman-Cullere, David Kreda, and Isaac~S. Kohane.

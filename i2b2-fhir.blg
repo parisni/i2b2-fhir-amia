@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: i2b2-fhir.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-I was expecting a `,' or a `}'---line 531 of file biblio.bib
+I was expecting a `,' or a `}'---line 536 of file biblio.bib
  :  
  :  @article{Wagholikar_2016, title={{SMART-on-FHIR} implemented over i2b2}, ISSN={1067-5027, 1527-974X}, DOI={10.1093/jamia/ocw079}, journal={Journal of the American Medical Informatics Association}, author={Wagholikar, Kavishwar B and Mandel, Joshua C and Klann, Jeffery G and Wattanasin, Nich and Mendis, Michael and Chute, Christopher G and Mandl, Kenneth D and Murphy, Shawn N}, year={2016}, month={Jun}, pages={ocw079}}
 (Error may have been on previous line)
@@ -11,45 +11,45 @@ I'm skipping whatever remains of this entry
 Warning--empty author in Pfiffner__2016
 Warning--empty journal in Pfiffner__2016
 Warning--empty year in Pfiffner__2016
-You've used 30 entries,
+You've used 31 entries,
             1791 wiz_defined-function locations,
-            615 strings with 9878 characters,
-and the built_in function-call counts, 6701 in all, are:
-= -- 479
-> -- 480
+            620 strings with 9982 characters,
+and the built_in function-call counts, 6810 in all, are:
+= -- 489
+> -- 481
 < -- 2
-+ -- 174
++ -- 175
 - -- 144
 * -- 522
-:= -- 1088
-add.period$ -- 88
-call.type$ -- 30
-change.case$ -- 30
+:= -- 1099
+add.period$ -- 91
+call.type$ -- 31
+change.case$ -- 31
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 249
-empty$ -- 605
+cite$ -- 34
+duplicate$ -- 254
+empty$ -- 623
 format.name$ -- 144
-if$ -- 1449
+if$ -- 1478
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 31
 missing$ -- 19
-newline$ -- 151
+newline$ -- 156
 num.names$ -- 18
-pop$ -- 119
+pop$ -- 127
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 127
+skip$ -- 130
 stack$ -- 0
 substring$ -- 287
-swap$ -- 55
+swap$ -- 56
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
 while$ -- 36
-width$ -- 32
-write$ -- 304
+width$ -- 33
+write$ -- 313
 (There was 1 error message)
