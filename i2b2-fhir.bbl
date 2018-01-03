@@ -1,7 +1,175 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{}
+\bibitem{Gottesman_2013}
+Omri Gottesman, Helena Kuivaniemi, Gerard Tromp, W.~Andrew Faucett, Rongling
+  Li, Teri~A. Manolio, Saskia~C. Sanderson, Joseph Kannry, Randi Zinberg,
+  Melissa~A. Basford, and et~al.
+\newblock The electronic medical records and genomics ({eMERGE}) network: past,
+  present, and future.
+\newblock {\em Genetics in Medicine}, 15(10):761–771, Oct 2013.
 
+\bibitem{McMurry_2013}
+Andrew~J. McMurry, Shawn~N. Murphy, Douglas MacFadden, Griffin Weber,
+  William~W. Simons, John Orechia, Jonathan Bickel, Nich Wattanasin, Clint
+  Gilbert, Philip Trevvett, and et~al.
+\newblock {SHRINE}: Enabling nationally scalable multi-site disease studies.
+\newblock {\em PLoS ONE}, 8(3):e55811, Mar 2013.
+
+\bibitem{DeMoor_2015}
+Georges De~Moor, Mats Sundgren, Dipak Kalra, Andreas Schmidt, Martin Dugas,
+  Brecht Claerhout, Töresin Karakoyun, Christian Ohmann, Pierre-Yves Lastic,
+  Nadir Ammour, and et~al.
+\newblock Using electronic health records for clinical research: The case of
+  the {EHR4CR} project.
+\newblock {\em Journal of Biomedical Informatics}, 53:162–173, Feb 2015.
+
+\bibitem{Delaney_2015}
+Brendan~C. Delaney, Vasa Curcin, Anna Andreasson, Theodoros~N. Arvanitis, Hilde
+  Bastiaens, Derek Corrigan, Jean-Francois Ethier, Olga Kostopoulou, Wolfgang
+  Kuchinke, Mark McGilchrist, and et~al.
+\newblock Translational medicine and patient safety in {E}urope:
+  {TRANSFoRm}—architecture for the learning health system in europe.
+\newblock {\em BioMed Research International}, 2015:1–8, 2015.
+
+\bibitem{Hripcsak_2015}
+George Hripcsak, Jon~D. Duke, Nigam~H. Shah, Christian~G. Reich, Vojtech Huser,
+  Martijn~J. Schuemie, Marc~A. Suchard, Rae~Woong Park, Ian Chi~Kei Wong,
+  Peter~R. Rijnbeek, and et~al.
+\newblock Observational health data sciences and informatics ({OHDSI}):
+  opportunities for observational researchers.
+\newblock {\em Studies in health technology and informatics}, 216:574, 2015.
+
+\bibitem{pmid22081225}
+I.~S. Kohane, S.~E. Churchill, and S.~N. Murphy.
+\newblock A translational engine at the national scale: informatics for
+  integrating biology and the bedside.
+\newblock {\em J Am Med Inform Assoc}, 19(2):181--185, 2012.
+
+\bibitem{Klann_2016}
+Jeffrey~G Klann, Aaron Abend, Vijay~A Raghavan, Kenneth~D Mandl, and Shawn~N
+  Murphy.
+\newblock Data interchange using i2b2.
+\newblock {\em Journal of the American Medical Informatics Association},
+  23(5):909–915, Sep 2016.
+
+\bibitem{i2b2-omop}
+{i2b2-omop} documentation.
+\newblock \url{https://community.i2b2.org/wiki/display/OMOP/OMOP+Home}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{Scheufele__2014}
+Elisabeth Scheufele, Dina Aronzon, Robert Coopersmith, Michael~T. McDuffie,
+  Manish Kapoor, Christopher~A. Uhrich, Jean~E. Avitabile, Jinlei Liu, Dan
+  Housman, and Matvey~B. Palchuk.
+\newblock tran{SMART}: an open source knowledge management and high content
+  data analytics platform.
+\newblock {\em AMIA Summits on Translational Science Proceedings}, 2014:96,
+  2014.
+
+\bibitem{i2b2-transmart}
+{i2b2-transmart} website.
+\newblock \url{https://avillach-lab.hms.harvard.edu/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{shrine}
+G.~M. Weber, S.~N. Murphy, A.~J. McMurry, D.~MacFadden, D.~J. Nigrin,
+  S.~Churchill, and I.~S. Kohane.
+\newblock The shared health research information network ({SHRINE}): A
+  prototype federated query tool for clinical data repositories.
+\newblock {\em Journal of the American Medical Informatics Association},
+  16(5):624–630, Sep 2009.
+
+\bibitem{insite}
+{insite} website.
+\newblock \url{https://www.insiteplatform.com/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{trinetx}
+{trinetx} website.
+\newblock \url{https://www.trinetx.com/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{ehr4crlesson}
+Yannick Girardeau, Justin Doods, Eric Zapletal, Gilles Chatellier, Christel
+  Daniel, Anita Burgun, Martin Dugas, and Bastien Rance.
+\newblock Leveraging the {EHR4CR} platform to support patient inclusion in
+  academic studies: challenges and lessons learned.
+\newblock {\em BMC Medical Research Methodology}, 17(1), Dec 2017.
+
+\bibitem{Wynden__2010}
+Rob Wynden, Mark~G. Weiner, Ida Sim, Davera Gabriel, Marco Casale, Simona
+  Carini, Shannon Hastings, David Ervin, Samson Tu, John~H. Gennari, and et~al.
+\newblock Ontology mapping and data discovery for the translational
+  investigator.
+\newblock {\em Summit on Translational Bioinformatics}, 2010:66, 2010.
+
+\bibitem{Wang2014}
+Shicai Wang, Ioannis Pandis, Chao Wu, Sijin He, David Johnson, Ibrahim Emam,
+  Florian Guitton, and Yike Guo.
+\newblock High dimensional biological data retrieval optimization with {NoSQL}
+  technology.
+\newblock {\em BMC Genomics}, 15(8):S3, Nov 2014.
+
+\bibitem{pmid27577447}
+D.~Firnkorn, S.~Merker, M.~Ganzinger, T.~Muley, and P.~Knaup.
+\newblock {Unlocking Data for Statistical Analyses and Data Mining: Generic
+  Case Extraction of Clinical Items from i2b2 and tran{SMART}}.
+\newblock {\em Stud Health Technol Inform}, 228:567--571, 2016.
+
+\bibitem{Rosenbloom_2017}
+S.~T. Rosenbloom, R.~J. Carroll, J.~L. Warner, M.~E. Matheny, and J.~C. Denny.
+\newblock Representing knowledge consistently across health systems.
+\newblock {\em Yearbook of Medical Informatics}, 26(01):139–147, Aug 2017.
+
+\bibitem{argo}
+{Argonaut} wikipage.
+\newblock \url{http://argonautwiki.hl7.org/index.php?title=Main\_Page}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{cimi}
+{CIMI} website.
+\newblock \url{http://www.opencimi.org/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{smarton}
+{SMART-on-FHIR} website.
+\newblock \url{http://docs.smarthealthit.org/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{Pfiffner__2016}
+{C3-PRO}: Connecting researchkit to the health system using i2b2 and {FHIR},
+  volume={11}, issn={1932-6203}, doi={10.1371/journal.pone.0152722},
+  number={3}, journal={PLOS ONE}, author={Pfiffner, Pascal B. and Pinyol, Isaac
+  and Natter, Marc D. and Mandl, Kenneth D.}, editor={Seo, Jeong-SunEditor},
+  year={2016}, month={Mar}, pages={e0152722}.
+
+\bibitem{Wagholikar_2016}
+Kavishwar~B Wagholikar, Joshua~C Mandel, Jeffery~G Klann, Nich Wattanasin,
+  Michael Mendis, Christopher~G Chute, Kenneth~D Mandl, and Shawn~N Murphy.
+\newblock {SMART-on-FHIR} implemented over i2b2.
+\newblock {\em Journal of the American Medical Informatics Association}, page
+  ocw079, Jun 2016.
+
+\bibitem{Boussadi_Zapletal_2017}
+Abdelali Boussadi and Eric Zapletal.
+\newblock A fast healthcare interoperability resources ({FHIR}) layer
+  implemented over i2b2.
+\newblock {\em BMC Medical Informatics and Decision Making}, 17(1), Dec 2017.
+
+\bibitem{FHIR}
+{FHIR} specifications.
+\newblock \url{https://www.hl7.org/fhir/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{SMARTFHIR}
+{SMART-on-FHIR} specifications.
+\newblock \url{http://docs.smarthealthit.org/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{HAPI}
+{HAPI-FHIR} website.
+\newblock \url{http://hapifhir.io/}.
+\newblock Accessed: 2017-09-28.
 
 \bibitem{Johnson:SD2016}
 AE~Johnson, TJ~Pollard, L~Shen, LW~Lehman, M~Feng, M~Ghassemi, B~Moody,
@@ -9,9 +177,17 @@ AE~Johnson, TJ~Pollard, L~Shen, LW~Lehman, M~Feng, M~Ghassemi, B~Moody,
 \newblock {MIMIC}-{III}, a freely accessible critical care database.
 \newblock {\em Sci Data}, 3:160035, May 24 2016.
 
-\bibitem{Klann:JAMIA2016}
-JG~Klann, A~Abend, VA~Raghavan, KD~Mandl, and SN~Murphy.
-\newblock Data interchange using i2b2.
-\newblock {\em J Am Med Inform Assoc}, 23(5):909--915, Sep 2016.
+\bibitem{i2b2-fhir-demo}
+{i2b2-FHIR} demo website.
+\newblock \url{http://34.205.31.28/webclient/}.
+\newblock Accessed: 2017-09-28.
+
+\bibitem{Alterovitz_2015}
+Gil Alterovitz, Jeremy Warner, Peijin Zhang, Yishen Chen, Mollie
+  Ullman-Cullere, David Kreda, and Isaac~S. Kohane.
+\newblock {SMART} on {FHIR} genomics: Facilitating standardized clinico-genomic
+  apps.
+\newblock {\em Journal of the American Medical Informatics Association}, page
+  ocv045, Jul 2015.
 
 \end{thebibliography}

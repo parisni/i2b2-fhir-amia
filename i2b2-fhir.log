@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.19)  28 SEP 2017 12:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.19)  3 JAN 2018 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,30 +500,28 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip48
 )
 \c@@todonotes@numberoftodonotes=\count125
-) (./i2b2-fhir.aux
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
 )
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (./i2b2-fhir.aux)
 \openout1 = `i2b2-fhir.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 52.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 54.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 *geometry* driver: auto-detecting
@@ -628,208 +626,129 @@ e
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 62.
+(Font)              <12> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 62.
+(Font)              <8> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 62.
+(Font)              <6> on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
-
-Overfull \hbox (13.18501pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 actuelle(i2b2);problemes 
- []
-
-
-Overfull \hbox (70.9763pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 pos[]es;solutions(FHIR);RelatedWork;Solution 
- []
-
-
-Overfull \hbox (13.18501pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 actuelle(i2b2);problemes 
- []
-
-
-Overfull \hbox (70.9763pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 pos[]es;solutions(FHIR);RelatedWork;Solution 
- []
-
-
-Overfull \hbox (13.18501pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 actuelle(i2b2);problemes 
- []
-
-
-Overfull \hbox (70.9763pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 pos[]es;solutions(FHIR);RelatedWork;Solution 
- []
-
-
-Overfull \hbox (13.18501pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 actuelle(i2b2);problemes 
- []
-
-
-Overfull \hbox (70.9763pt too wide) in paragraph at lines 82--82
-\OT1/ptm/m/n/7 pos[]es;solutions(FHIR);RelatedWork;Solution 
- []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 83.
+(Font)              <7> on input line 77.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 83.
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-[1
+(Font)              <5> on input line 77.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-<overall.pdf, id=13, 972.63374pt x 818.05624pt>
+<overall.pdf, id=14, 972.63374pt x 818.05624pt>
 File: overall.pdf Graphic file (type pdf)
  <use overall.pdf>
-Package pdftex.def Info: overall.pdf used on input line 107.
-(pdftex.def)             Requested size: 389.0466pt x 327.21669pt.
+Package pdftex.def Info: overall.pdf used on input line 95.
+(pdftex.def)             Requested size: 375.80544pt x 316.06981pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<sequence_diagram.pdf, id=14, 683.55376pt x 584.1825pt>
+<sequence_diagram.pdf, id=15, 683.55376pt x 584.1825pt>
 File: sequence_diagram.pdf Graphic file (type pdf)
 
 <use sequence_diagram.pdf>
-Package pdftex.def Info: sequence_diagram.pdf used on input line 114.
-(pdftex.def)             Requested size: 341.77605pt x 292.09053pt.
+Package pdftex.def Info: sequence_diagram.pdf used on input line 104.
+(pdftex.def)             Requested size: 410.13542pt x 350.51219pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (9.48906pt too wide) in paragraph at lines 121--127
+[2]
+Overfull \hbox (9.48906pt too wide) in paragraph at lines 119--125
  [][] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 6641) in paragraph at lines 135--135
+Underfull \hbox (badness 6641) in paragraph at lines 133--133
 []\OT1/ptm/b/n/10 ontology ta-
  []
 
 
-Overfull \hbox (2.79367pt too wide) in paragraph at lines 138--138
+Overfull \hbox (2.79367pt too wide) in paragraph at lines 136--136
 []\OT1/ptm/m/n/10 c[]metadataxml| 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2]
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-[3 <./overall.pdf>] <graph2.pdf, id=34, 504.88625pt x 504.88625pt>
-File: graph2.pdf Graphic file (type pdf)
-
-<use graph2.pdf>
-Package pdftex.def Info: graph2.pdf used on input line 186.
-(pdftex.def)             Requested size: 353.41795pt x 353.41795pt.
- [4 <./sequence_diagram.pdf>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<graph1.pdf, id=41, 504.88625pt x 504.88625pt>
-File: graph1.pdf Graphic file (type pdf)
- <use graph1.pdf>
-Package pdftex.def Info: graph1.pdf used on input line 193.
-(pdftex.def)             Requested size: 353.41795pt x 353.41795pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<demo.png, id=42, 813.0375pt x 623.32875pt>
+[3 <./overall.pdf>] [4 <./sequence_diagram.pdf>]
+<demo.png, id=41, 813.0375pt x 623.32875pt>
 File: demo.png Graphic file (type png)
  <use demo.png>
-Package pdftex.def Info: demo.png used on input line 199.
-(pdftex.def)             Requested size: 406.51776pt x 311.6636pt.
+Package pdftex.def Info: demo.png used on input line 185.
+(pdftex.def)             Requested size: 325.20924pt x 249.32707pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6 <./graph2.pdf>] [7 <./graph1.pdf>] [8 <./demo.png>]
+<graph2.pdf, id=42, 504.88625pt x 504.88625pt>
+File: graph2.pdf Graphic file (type pdf)
+ <use graph2.pdf>
+Package pdftex.def Info: graph2.pdf used on input line 191.
+(pdftex.def)             Requested size: 302.93407pt x 302.93407pt.
 
-LaTeX Warning: Marginpar on page 9 moved.
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 287.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) (./i2b2-fhir.bbl)
+<graph1.pdf, id=43, 504.88625pt x 504.88625pt>
+File: graph1.pdf Graphic file (type pdf)
+ <use graph1.pdf>
+Package pdftex.def Info: graph1.pdf used on input line 198.
+(pdftex.def)             Requested size: 302.93407pt x 302.93407pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5] [6 <./demo.png>] [7 <./graph2.pdf>] [8 <./graph1.pdf>] (./i2b2-fhir.bbl
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 1394) in paragraph at lines 305--306
-[]\OT1/ptm/m/n/10 Girardeau Y, Doods J, Zaple-tal E, Chatel-lier G, Daniel C, B
-ur-gun A, et al. Lever-ag-ing the EHR4CR
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 57.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 1052) in paragraph at lines 56--59
+[]\OT1/ptm/m/n/10 i2b2-omop doc-u-men-ta-tion.  $\OT1/pcr/m/n/10 https : / / co
+mmunity . i2b2 . org / wiki / display / OMOP / OMOP + Home$\OT1/ptm/m/n/10 .
  []
 
-
-Underfull \hbox (badness 5622) in paragraph at lines 305--306
-\OT1/ptm/m/n/10 plat-form to sup-port pa-tient in-clu-sion in aca-demic stud-ie
-s: chal-lenges and lessons learned. BMC
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
-\OT1/ptm/m/n/10 Med-i-cal Re-search Method-ol-ogy [In-ter-net]. 2017 Dec [cited
- 2017 Sep 28];17(1). Avail-able from:
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
-[]\OT1/ptm/m/n/10 HL7. HL7 Arg-onaut Project Wiki [In-ter-net]. [cit[]e 27 sept
- 2017]. Disponible sur:
- []
-
-[10] [11] (./i2b2-fhir.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[9]) [10] (./i2b2-fhir.aux) ) 
 Here is how much of TeX's memory you used:
- 16861 strings out of 493029
- 315051 string characters out of 6136234
- 406482 words of memory out of 5000000
- 20077 multiletter control sequences out of 15000+600000
- 16623 words of font info for 37 fonts, out of 8000000 for 9000
+ 16760 strings out of 493029
+ 312057 string characters out of 6136234
+ 360626 words of memory out of 5000000
+ 19971 multiletter control sequences out of 15000+600000
+ 18208 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,77p,2286b,1291s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on i2b2-fhir.pdf (11 pages, 393256 bytes).
+ 62i,11n,77p,2435b,1318s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on i2b2-fhir.pdf (10 pages, 404422 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

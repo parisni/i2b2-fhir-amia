@@ -3,112 +3,53 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: i2b2-fhir.aux
 The style file: unsrt.bst
 Database file #1: biblio.bib
-You're missing a field part---line 11 of file biblio.bib
- :   volume    = 
- :               ,
+I was expecting a `,' or a `}'---line 531 of file biblio.bib
+ :  
+ :  @article{Wagholikar_2016, title={{SMART-on-FHIR} implemented over i2b2}, ISSN={1067-5027, 1527-974X}, DOI={10.1093/jamia/ocw079}, journal={Journal of the American Medical Informatics Association}, author={Wagholikar, Kavishwar B and Mandel, Joshua C and Klann, Jeffery G and Wattanasin, Nich and Mendis, Michael and Chute, Christopher G and Mandl, Kenneth D and Murphy, Shawn N}, year={2016}, month={Jun}, pages={ocw079}}
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 16 of file biblio.bib
- : @book{
- :       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 24 of file biblio.bib
- : @conference{
- :             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 33 of file biblio.bib
- : @inproceedings{
- :                ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 41 of file biblio.bib
- : @masterthesis{
- :               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 49 of file biblio.bib
- : @online{
- :         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 58 of file biblio.bib
- : @phdthesis{
- :            ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 66 of file biblio.bib
- : @techreport{
- :             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 73 of file biblio.bib
- : @unpublished{
- :              ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "ref5"
-Warning--I didn't find a database entry for "ref6"
-Warning--I didn't find a database entry for "ref7"
-Warning--I didn't find a database entry for "ref8"
-Warning--I didn't find a database entry for "ref9"
-Warning--I didn't find a database entry for "shrine"
-Warning--I didn't find a database entry for "insite"
-Warning--I didn't find a database entry for "trinetx"
-Warning--I didn't find a database entry for "transmart"
-Warning--I didn't find a database entry for "i2b2-transmart"
-Warning--I didn't find a database entry for "pcornet"
-Warning--I didn't find a database entry for "ref14"
-Warning--I didn't find a database entry for "ehr4crlesson"
-Warning--I didn't find a database entry for "i2b2map"
-Warning--I didn't find a database entry for "i2b2nosql"
-Warning--I didn't find a database entry for "i2b2export"
-Warning--I didn't find a database entry for "ref10"
-Warning--I didn't find a database entry for "ref11"
-Warning--I didn't find a database entry for "ref12"
-Warning--I didn't find a database entry for "cimi"
-Warning--I didn't find a database entry for "apple"
-Warning--I didn't find a database entry for "wag"
-Warning--I didn't find a database entry for "zappy"
-Warning--I didn't find a database entry for "ref15"
-Warning--I didn't find a database entry for "ref17"
-Warning--I didn't find a database entry for "ref16"
-Warning--I didn't find a database entry for "ref18"
-Warning--empty author in 
-Warning--empty title in 
-Warning--empty journal in 
-Warning--empty year in 
-You've used 3 entries,
+Warning--empty author in Pfiffner__2016
+Warning--empty journal in Pfiffner__2016
+Warning--empty year in Pfiffner__2016
+You've used 30 entries,
             1791 wiz_defined-function locations,
-            489 strings with 4078 characters,
-and the built_in function-call counts, 720 in all, are:
-= -- 46
-> -- 50
-< -- 0
-+ -- 18
-- -- 15
-* -- 75
-:= -- 121
-add.period$ -- 7
-call.type$ -- 3
-change.case$ -- 2
+            615 strings with 9878 characters,
+and the built_in function-call counts, 6701 in all, are:
+= -- 479
+> -- 480
+< -- 2
++ -- 174
+- -- 144
+* -- 522
+:= -- 1088
+add.period$ -- 88
+call.type$ -- 30
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 26
-empty$ -- 61
-format.name$ -- 15
-if$ -- 141
+cite$ -- 33
+duplicate$ -- 249
+empty$ -- 605
+format.name$ -- 144
+if$ -- 1449
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 16
-num.names$ -- 2
-pop$ -- 10
+int.to.str$ -- 30
+missing$ -- 19
+newline$ -- 151
+num.names$ -- 18
+pop$ -- 119
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 12
+skip$ -- 127
 stack$ -- 0
-substring$ -- 43
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 287
+swap$ -- 55
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 5
-width$ -- 4
-write$ -- 28
-(There were 9 error messages)
+warning$ -- 3
+while$ -- 36
+width$ -- 32
+write$ -- 304
+(There was 1 error message)
