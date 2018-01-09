@@ -23,5 +23,5 @@ df2$Patient_Set_Size <- factor(df2$Patient_Set_Size, levels=c(
 							       "50K","100K","200K"))
 df2$Labels <- factor(df2$Labels, levels=c("Traditional i2b2", "SMART-on-FHIR i2b2" ))
 ggplot(data=df2, aes(x=Patient_Set_Size, y=Time_Spent_Seconds, fill=Labels)) + geom_bar(stat="identity", position=position_dodge()) +
-  xlab("Patient Set Size") + ylab("Time Spent (ms)")
+  xlab("Patient Set Size") + ylab("Time Spent (ms)") + theme(text = element_text(size=20))
 ggsave("graph2.pdf")

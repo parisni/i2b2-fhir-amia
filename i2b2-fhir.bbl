@@ -3,7 +3,7 @@
 \bibitem{Gottesman_2013}
 Omri Gottesman, Helena Kuivaniemi, Gerard Tromp, W.~Andrew Faucett, Rongling
   Li, Teri~A. Manolio, Saskia~C. Sanderson, Joseph Kannry, Randi Zinberg,
-  Melissa~A. Basford, and et~al.
+  Melissa~A. Basford, et~al.
 \newblock The electronic medical records and genomics ({eMERGE}) network: past,
   present, and future.
 \newblock {\em Genetics in Medicine}, 15(10):761–771, Oct 2013.
@@ -11,14 +11,14 @@ Omri Gottesman, Helena Kuivaniemi, Gerard Tromp, W.~Andrew Faucett, Rongling
 \bibitem{McMurry_2013}
 Andrew~J. McMurry, Shawn~N. Murphy, Douglas MacFadden, Griffin Weber,
   William~W. Simons, John Orechia, Jonathan Bickel, Nich Wattanasin, Clint
-  Gilbert, Philip Trevvett, and et~al.
+  Gilbert, Philip Trevvett, et~al.
 \newblock {SHRINE}: Enabling nationally scalable multi-site disease studies.
 \newblock {\em PLoS ONE}, 8(3):e55811, Mar 2013.
 
 \bibitem{DeMoor_2015}
 Georges De~Moor, Mats Sundgren, Dipak Kalra, Andreas Schmidt, Martin Dugas,
   Brecht Claerhout, Töresin Karakoyun, Christian Ohmann, Pierre-Yves Lastic,
-  Nadir Ammour, and et~al.
+  Nadir Ammour, et~al.
 \newblock Using electronic health records for clinical research: The case of
   the {EHR4CR} project.
 \newblock {\em Journal of Biomedical Informatics}, 53:162–173, Feb 2015.
@@ -26,7 +26,7 @@ Georges De~Moor, Mats Sundgren, Dipak Kalra, Andreas Schmidt, Martin Dugas,
 \bibitem{Delaney_2015}
 Brendan~C. Delaney, Vasa Curcin, Anna Andreasson, Theodoros~N. Arvanitis, Hilde
   Bastiaens, Derek Corrigan, Jean-Francois Ethier, Olga Kostopoulou, Wolfgang
-  Kuchinke, Mark McGilchrist, and et~al.
+  Kuchinke, Mark McGilchrist, et~al.
 \newblock Translational medicine and patient safety in {E}urope:
   {TRANSFoRm}—architecture for the learning health system in europe.
 \newblock {\em BioMed Research International}, 2015:1–8, 2015.
@@ -34,7 +34,7 @@ Brendan~C. Delaney, Vasa Curcin, Anna Andreasson, Theodoros~N. Arvanitis, Hilde
 \bibitem{Hripcsak_2015}
 George Hripcsak, Jon~D. Duke, Nigam~H. Shah, Christian~G. Reich, Vojtech Huser,
   Martijn~J. Schuemie, Marc~A. Suchard, Rae~Woong Park, Ian Chi~Kei Wong,
-  Peter~R. Rijnbeek, and et~al.
+  Peter~R. Rijnbeek, et~al.
 \newblock Observational health data sciences and informatics ({OHDSI}):
   opportunities for observational researchers.
 \newblock {\em Studies in health technology and informatics}, 216:574, 2015.
@@ -98,7 +98,7 @@ Yannick Girardeau, Justin Doods, Eric Zapletal, Gilles Chatellier, Christel
 
 \bibitem{Wynden__2010}
 Rob Wynden, Mark~G. Weiner, Ida Sim, Davera Gabriel, Marco Casale, Simona
-  Carini, Shannon Hastings, David Ervin, Samson Tu, John~H. Gennari, and et~al.
+  Carini, Shannon Hastings, David Ervin, Samson Tu, John~H. Gennari, et~al.
 \newblock Ontology mapping and data discovery for the translational
   investigator.
 \newblock {\em Summit on Translational Bioinformatics}, 2010:66, 2010.
@@ -137,11 +137,10 @@ S.~T. Rosenbloom, R.~J. Carroll, J.~L. Warner, M.~E. Matheny, and J.~C. Denny.
 \newblock Accessed: 2017-09-28.
 
 \bibitem{Pfiffner__2016}
-{C3-PRO}: Connecting researchkit to the health system using i2b2 and {FHIR},
-  volume={11}, issn={1932-6203}, doi={10.1371/journal.pone.0152722},
-  number={3}, journal={PLOS ONE}, author={Pfiffner, Pascal B. and Pinyol, Isaac
-  and Natter, Marc D. and Mandl, Kenneth D.}, editor={Seo, Jeong-SunEditor},
-  year={2016}, month={Mar}, pages={e0152722}.
+Pascal~B. Pfiffner, Isaac Pinyol, Marc~D. Natter, and Kenneth~D. Mandl.
+\newblock {C3-PRO}: Connecting researchkit to the health system using i2b2 and
+  {FHIR}.
+\newblock {\em PLOS ONE}, 11(3):e0152722, Mar 2016.
 
 \bibitem{Wagholikar_2016}
 Kavishwar~B Wagholikar, Joshua~C Mandel, Jeffery~G Klann, Nich Wattanasin,

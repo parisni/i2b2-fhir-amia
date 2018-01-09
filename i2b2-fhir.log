@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.19)  3 JAN 2018 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.19)  9 JAN 2018 09:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -668,28 +668,32 @@ Package pdftex.def Info: sequence_diagram.pdf used on input line 104.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2]
-Overfull \hbox (9.48906pt too wide) in paragraph at lines 119--125
+Overfull \hbox (9.48906pt too wide) in paragraph at lines 122--128
  [][] 
  []
 
 
-Underfull \hbox (badness 6641) in paragraph at lines 133--133
+Underfull \hbox (badness 6641) in paragraph at lines 136--136
 []\OT1/ptm/b/n/10 ontology ta-
  []
 
 
-Overfull \hbox (2.79367pt too wide) in paragraph at lines 136--136
+Overfull \hbox (2.79367pt too wide) in paragraph at lines 139--139
 []\OT1/ptm/m/n/10 c[]metadataxml| 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <./overall.pdf>] [4 <./sequence_diagram.pdf>]
-<demo.png, id=41, 813.0375pt x 623.32875pt>
+[3 <./overall.pdf>]
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+[4 <./sequence_diagram.pdf>] <demo.png, id=41, 813.0375pt x 623.32875pt>
 File: demo.png Graphic file (type png)
- <use demo.png>
-Package pdftex.def Info: demo.png used on input line 185.
+
+<use demo.png>
+Package pdftex.def Info: demo.png used on input line 189.
 (pdftex.def)             Requested size: 325.20924pt x 249.32707pt.
 
 
@@ -698,25 +702,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <graph2.pdf, id=42, 504.88625pt x 504.88625pt>
 File: graph2.pdf Graphic file (type pdf)
  <use graph2.pdf>
-Package pdftex.def Info: graph2.pdf used on input line 191.
-(pdftex.def)             Requested size: 302.93407pt x 302.93407pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package pdftex.def Info: graph2.pdf used on input line 196.
+(pdftex.def)             Requested size: 186.12703pt x 186.13089pt.
 
 <graph1.pdf, id=43, 504.88625pt x 504.88625pt>
 File: graph1.pdf Graphic file (type pdf)
  <use graph1.pdf>
 Package pdftex.def Info: graph1.pdf used on input line 198.
-(pdftex.def)             Requested size: 302.93407pt x 302.93407pt.
+(pdftex.def)             Requested size: 186.12703pt x 186.13089pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6 <./demo.png>] [7 <./graph2.pdf>] [8 <./graph1.pdf>] (./i2b2-fhir.bbl
+[5] [6 <./demo.png>] [7 <./graph2.pdf> <./graph1.pdf>] (./i2b2-fhir.bbl
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
+) [8]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -727,28 +728,31 @@ Underfull \hbox (badness 1052) in paragraph at lines 56--59
 mmunity . i2b2 . org / wiki / display / OMOP / OMOP + Home$\OT1/ptm/m/n/10 .
  []
 
-[9] [10]) [11] (./i2b2-fhir.aux) ) 
+[9]) [10] (./i2b2-fhir.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 16761 strings out of 493029
- 312066 string characters out of 6136234
- 360630 words of memory out of 5000000
- 19972 multiletter control sequences out of 15000+600000
+ 16934 strings out of 493029
+ 316076 string characters out of 6136234
+ 390153 words of memory out of 5000000
+ 20145 multiletter control sequences out of 15000+600000
  18208 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,77p,2483b,1318s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvip
-s/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-ri8a.pfb>
-Output written on i2b2-fhir.pdf (11 pages, 405498 bytes).
+ 62i,12n,77p,2550b,1319s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on i2b2-fhir.pdf (10 pages, 409852 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

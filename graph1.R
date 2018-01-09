@@ -8,5 +8,5 @@ df2 <- data.frame(supp=rep(c("Database", "FHIR Generation", "FHIR Parsing"), eac
 print(df2)
 df2$Patient_Set_Size <- factor(df2$Patient_Set_Size, levels=c("8K", "100K","200K","400K"))
 df2$supp <- factor(df2$sup, levels=c("i2b2 CRC Processing",  "FHIR Parsing", "FHIR Generation", "Database" ))
-ggplot(data=df2, aes(x=Patient_Set_Size, y=Time_Spent_Seconds, fill=supp)) + geom_bar(stat="identity") + xlab("Patient Set Size") + ylab("Time Spent (ms)")
+ggplot(data=df2, aes(x=Patient_Set_Size, y=Time_Spent_Seconds, fill=supp)) + geom_bar(stat="identity") + xlab("Patient Set Size") + ylab("Time Spent (ms)") + theme(text = element_text(size=20))
 ggsave("graph1.pdf")
